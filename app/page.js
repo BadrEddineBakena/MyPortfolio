@@ -114,12 +114,12 @@ export default function Home() {
         <div className="grid"></div>
         <div className="binary-container"></div>
         <div className="particle-container"></div>
-        <div className="code-snippet" style={{top:'20%', left:'5%', animationDelay:'1s'}}>&lt;secureConnection()&gt;</div>
-        <div className="code-snippet" style={{top:'40%', right:'10%', animationDelay:'3s'}}>if (auth) &#123; decrypt(); &#125;</div>
-        <div className="code-snippet" style={{bottom:'25%', left:'15%', animationDelay:'5s'}}>console.log("🛡️ Safe");</div>
-        <div className="tech-icon" style={{top:'15%', right:'20%'}}>🔒</div>
-        <div className="tech-icon" style={{bottom:'30%', left:'25%'}}>🛡️</div>
-        <div className="tech-icon" style={{top:'60%', left:'80%'}}>⚙️</div>
+        <div className="code-snippet" style={{ top: '20%', left: '5%', animationDelay: '1s' }}>&lt;secureConnection()&gt;</div>
+        <div className="code-snippet" style={{ top: '40%', right: '10%', animationDelay: '3s' }}>if (auth) &#123; decrypt(); &#125;</div>
+        <div className="code-snippet" style={{ bottom: '25%', left: '15%', animationDelay: '5s' }}>console.log("🛡️ Safe");</div>
+        <div className="tech-icon" style={{ top: '15%', right: '20%' }}>🔒</div>
+        <div className="tech-icon" style={{ bottom: '30%', left: '25%' }}>🛡️</div>
+        <div className="tech-icon" style={{ top: '60%', left: '80%' }}>⚙️</div>
         <div className="symbol-container"></div>
       </div>
       {/* Navigation */}
@@ -154,7 +154,13 @@ export default function Home() {
           <div className="subtitle">{t.hero.subtitle}</div>
           <p>{t.hero.intro}</p>
           <div className="cta-buttons">
-            <a href="/BadrEddineBAKENA.pdf" download className="btn">{t.hero.downloadCV}</a>
+            <a
+              href={lang === "fr" ? "/BadrEddineBAKENA-FR.pdf" : "/BadrEddineBAKENA.pdf"}
+              download
+              className="btn"
+            >
+              {t.hero.downloadCV}
+            </a>
             <a id="link-contact" className="btn btn-primary" href="#contact">{t.hero.contactMe}</a>
           </div>
         </div>
@@ -189,19 +195,19 @@ export default function Home() {
           <div className="dev-indicator">
             <div className="dev-label">{t.about.dev[0]}</div>
             <div className="dev-bar">
-              <div className="dev-fill web" style={{"--target-width": "80%"}}></div>
+              <div className="dev-fill web" style={{ "--target-width": "80%" }}></div>
             </div>
           </div>
           <div className="dev-indicator">
             <div className="dev-label">{t.about.dev[1]}</div>
             <div className="dev-bar">
-              <div className="dev-fill software" style={{"--target-width": "60%"}}></div>
+              <div className="dev-fill software" style={{ "--target-width": "60%" }}></div>
             </div>
           </div>
           <div className="dev-indicator">
             <div className="dev-label">{t.about.dev[2]}</div>
             <div className="dev-bar">
-              <div className="dev-fill security" style={{"--target-width": "50%"}}></div>
+              <div className="dev-fill security" style={{ "--target-width": "50%" }}></div>
             </div>
           </div>
         </div>
@@ -290,7 +296,7 @@ export default function Home() {
                 <span className="project-tag">Networking</span>
                 <span className="project-tag">Security</span>
               </div>
-              <h3 className="project-title">{t.projects.port.title} <span style={{color:'#aaa'}}>{t.projects.port.soon}</span></h3>
+              <h3 className="project-title">{t.projects.port.title} <span style={{ color: '#aaa' }}>{t.projects.port.soon}</span></h3>
               <p className="project-description">{t.projects.port.desc}</p>
               <div className="project-links">
                 <span className="project-link disabled"><i className="fas fa-code"></i> {t.projects.inProgress}</span>
