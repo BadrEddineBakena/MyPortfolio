@@ -711,3 +711,134 @@ img, .project-image img {
   height: auto;
   display: block;
 }
+
+/* --- Fix language switcher button for mobile --- */
+@media (max-width: 768px) {
+  .lang-switch-btn {
+    width: auto;
+    margin: 0 0 0 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 101;
+  }
+  nav {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0.7rem 1rem;
+  }
+  nav .logo {
+    font-size: 1.1rem;
+    flex: 1 1 auto;
+  }
+  nav .menu-btn {
+    margin-left: 0.5rem;
+  }
+}
+
+/* --- Mobile menu close button --- */
+.close-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(5,11,21,0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+  }
+  nav ul.active {
+    right: 0;
+  }
+  .close-menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--cyan);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+}
+
+/* --- Container and section padding for mobile --- */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  section {
+    padding: 4rem 0 2rem 0;
+  }
+}
+
+/* --- Hero image spacing fix --- */
+@media (max-width: 768px) {
+  #hero {
+    padding-top: 6rem;
+  }
+}
+
+/* --- About, stats, dev indicators, projects, services, contact: stack and fill width on mobile --- */
+@media (max-width: 768px) {
+  .about-grid,
+  .stats-grid,
+  .dev-indicators,
+  #projects .projects-grid,
+  #services .services-grid,
+  #contact .contact-container {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .stat-card,
+  .dev-indicator,
+  .project-card,
+  .service-card,
+  .contact-form {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    margin: 0 auto 1rem auto !important;
+    box-sizing: border-box;
+  }
+}
+
+/* --- Remove fixed height from stat cards and project images on mobile --- */
+@media (max-width: 576px) {
+  .stat-card {
+    height: auto !important;
+    padding: 1rem 0.5rem !important;
+  }
+  .project-image {
+    height: 120px !important;
+  }
+}
+
+/* --- Contact form fix for mobile --- */
+@media (max-width: 576px) {
+  .contact-form {
+    padding: 1rem !important;
+  }
+}
+
+/* --- Ensure no horizontal scroll on mobile --- */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}

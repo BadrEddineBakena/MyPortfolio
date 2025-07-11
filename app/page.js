@@ -120,6 +120,7 @@ export default function Home() {
         <div className="logo"><i className="fas fa-shield-alt"></i> Badr Eddine BAKENA</div>
         <button className="menu-btn" id="menuBtn"><i className="fas fa-bars"></i></button>
         <ul id="navMenu">
+          <button className="close-menu" id="closeBtn" aria-label="Close Menu">&times;</button>
           <li><a href="#hero">{t.nav.home}</a></li>
           <li><a href="#about">{t.nav.about}</a></li>
           <li><a href="#projects">{t.nav.projects}</a></li>
