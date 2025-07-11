@@ -100,6 +100,13 @@ export default function Home() {
     }
   }, []);
 
+  const handleNavLinkClick = () => {
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu && window.innerWidth <= 992) {
+      navMenu.classList.remove('active');
+    }
+  };
+
   return (
     <>
       {/* Animated Background */}
@@ -121,12 +128,12 @@ export default function Home() {
         <button className="menu-btn" id="menuBtn"><i className="fas fa-bars"></i></button>
         <ul id="navMenu">
           <button className="close-menu" id="closeBtn" aria-label="Close Menu">&times;</button>
-          <li><a href="#hero">{t.nav.home}</a></li>
-          <li><a href="#about">{t.nav.about}</a></li>
-          <li><a href="#education">{t.nav.education}</a></li>
-          <li><a href="#projects">{t.nav.projects}</a></li>
-          <li><a href="#services">{t.nav.services}</a></li>
-          <li><a href="#contact">{t.nav.contact}</a></li>
+          <li><a href="#hero" onClick={handleNavLinkClick}>{t.nav.home}</a></li>
+          <li><a href="#about" onClick={handleNavLinkClick}>{t.nav.about}</a></li>
+          <li><a href="#education" onClick={handleNavLinkClick}>{t.nav.education}</a></li>
+          <li><a href="#projects" onClick={handleNavLinkClick}>{t.nav.projects}</a></li>
+          <li><a href="#services" onClick={handleNavLinkClick}>{t.nav.services}</a></li>
+          <li><a href="#contact" onClick={handleNavLinkClick}>{t.nav.contact}</a></li>
         </ul>
         <button
           className="lang-switch-btn"
