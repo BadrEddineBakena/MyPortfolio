@@ -842,3 +842,56 @@ html, body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+/* Education Section Styles */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.education-card {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid var(--cyan);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,255,159,0.05);
+  transition: box-shadow 0.3s, border 0.3s;
+  position: relative;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.education-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 8px 32px rgba(0,191,255,0.12);
+}
+.education-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+  color: var(--cyan);
+}
+.education-card p {
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+  font-size: 0.98rem;
+}
+.edu-date {
+  font-size: 0.92rem;
+  color: var(--blue);
+  background: rgba(0,191,255,0.08);
+  border-radius: 12px;
+  padding: 0.2rem 0.8rem;
+  margin-top: auto;
+  align-self: flex-end;
+}
+@media (max-width: 768px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .education-card {
+    padding: 1.2rem 0.7rem;
+  }
+}

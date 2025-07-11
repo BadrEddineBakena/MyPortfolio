@@ -654,3 +654,257 @@
     .services-grid { grid-template-columns:1fr; }
     .project-image { height:180px; }
   }
+
+/* Language Switcher Button */
+.lang-switch-btn {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--cyan);
+  color: var(--bg);
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.lang-switch-btn:hover {
+  background: var(--blue);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 1rem 1rem;
+  }
+  nav .logo {
+    font-size: 1.1rem;
+  }
+  .lang-switch-btn {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+    order: 2;
+  }
+  nav .menu-btn {
+    order: 3;
+  }
+  nav ul {
+    order: 1;
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  #hero .profile-img-container {
+    width: 120px;
+    height: 120px;
+  }
+  #hero h1 {
+    font-size: 1.5rem;
+  }
+  .lang-switch-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+/* Ensure images are responsive */
+img, .project-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Fix language switcher button for mobile --- */
+@media (max-width: 768px) {
+  .lang-switch-btn {
+    width: auto;
+    margin: 0 0 0 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 101;
+  }
+  nav {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0.7rem 1rem;
+  }
+  nav .logo {
+    font-size: 1.1rem;
+    flex: 1 1 auto;
+  }
+  nav .menu-btn {
+    margin-left: 0.5rem;
+  }
+}
+
+/* --- Mobile menu close button --- */
+.close-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(5,11,21,0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease;
+    z-index: 999;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  nav ul.active {
+    right: 0;
+  }
+  .close-menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--cyan);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+}
+
+/* --- Container and section padding for mobile --- */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  section {
+    padding: 4rem 0 2rem 0;
+  }
+}
+
+/* --- Hero image spacing fix --- */
+@media (max-width: 768px) {
+  #hero {
+    padding-top: 6rem;
+  }
+}
+
+/* --- About, stats, dev indicators, projects, services, contact: stack and fill width on mobile --- */
+@media (max-width: 768px) {
+  .about-grid,
+  .stats-grid,
+  .dev-indicators,
+  #projects .projects-grid,
+  #services .services-grid,
+  #contact .contact-container {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .stat-card,
+  .dev-indicator,
+  .project-card,
+  .service-card,
+  .contact-form {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    margin: 0 auto 1rem auto !important;
+    box-sizing: border-box;
+  }
+}
+
+/* --- Remove fixed height from stat cards and project images on mobile --- */
+@media (max-width: 576px) {
+  .stat-card {
+    height: auto !important;
+    padding: 1rem 0.5rem !important;
+  }
+  .project-image {
+    height: 120px !important;
+  }
+}
+
+/* --- Contact form fix for mobile --- */
+@media (max-width: 576px) {
+  .contact-form {
+    padding: 1rem !important;
+  }
+}
+
+/* --- Ensure no horizontal scroll on mobile --- */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Education Section Styles */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.education-card {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid var(--cyan);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,255,159,0.05);
+  transition: box-shadow 0.3s, border 0.3s;
+  position: relative;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.education-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 8px 32px rgba(0,191,255,0.12);
+}
+.education-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+  color: var(--cyan);
+}
+.education-card p {
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+  font-size: 0.98rem;
+}
+.edu-date {
+  font-size: 0.92rem;
+  color: var(--blue);
+  background: rgba(0,191,255,0.08);
+  border-radius: 12px;
+  padding: 0.2rem 0.8rem;
+  margin-top: auto;
+  align-self: flex-end;
+}
+@media (max-width: 768px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .education-card {
+    padding: 1.2rem 0.7rem;
+  }
+}

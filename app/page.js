@@ -123,6 +123,7 @@ export default function Home() {
           <button className="close-menu" id="closeBtn" aria-label="Close Menu">&times;</button>
           <li><a href="#hero">{t.nav.home}</a></li>
           <li><a href="#about">{t.nav.about}</a></li>
+          <li><a href="#education">{t.nav.education}</a></li>
           <li><a href="#projects">{t.nav.projects}</a></li>
           <li><a href="#services">{t.nav.services}</a></li>
           <li><a href="#contact">{t.nav.contact}</a></li>
@@ -195,6 +196,27 @@ export default function Home() {
             <div className="dev-bar">
               <div className="dev-fill security" style={{"--target-width": "50%"}}></div>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* Education Section */}
+      <section id="education" className="container">
+        <h2>{t.education.title}</h2>
+        <div className="education-grid">
+          <div className="education-card">
+            <h3>{t.education.bac.title}</h3>
+            <p>{t.education.bac.desc}</p>
+            <span className="edu-date">2022</span>
+          </div>
+          <div className="education-card">
+            <h3>{t.education.est.title}</h3>
+            <p>{t.education.est.desc}</p>
+            <span className="edu-date">2022 – 2024</span>
+          </div>
+          <div className="education-card">
+            <h3>{t.education.ensiasd.title}</h3>
+            <p>{t.education.ensiasd.desc}</p>
+            <span className="edu-date">2024 – 2027 {t.education.ensiasd.status}</span>
           </div>
         </div>
       </section>
@@ -370,7 +392,7 @@ export default function Home() {
 
 const translations = {
   en: {
-    nav: { home: "Home", about: "About", projects: "Projects", services: "Services", contact: "Contact" },
+    nav: { home: "Home", about: "About", education: "Education", projects: "Projects", services: "Services", contact: "Contact" },
     hero: {
       subtitle: "Cybersecurity Student with coding experience",
       intro: "👋 Hi, my name is Badr Eddine BAKENA. I’m originally from Tounfite — a small village in the Midelt region of Morocco. Currently, I'm a cybersecurity engineering student based in Taroudante.\n\nI’m passionate about full-stack development and gradually expanding my skills in software engineering. I enjoy building secure, responsive web applications and solving real-world problems through code. Whether it's crafting intuitive frontend interfaces, developing backend logic, or exploring system vulnerabilities, I’m always learning and pushing boundaries.\n\nLet’s build something smart, secure, and impactful together.",
@@ -384,6 +406,22 @@ const translations = {
       projects: "Projects & Labs Completed",
       skills: ["Learning Ethical Hacking", "Cybersecurity Fundamentals", "Linux & Networking Basics", "Python, JAVA, C, C#", "HTML,CSS, JavaScript, NodeJS", "MySQL, PL-SQL"],
       dev: ["Web Development", "Software Engineering", "Cybersecurity Foundations"]
+    },
+    education: {
+      title: "Education",
+      bac: {
+        title: "Baccalaureate – Physical Sciences",
+        desc: "Obtained in 2022"
+      },
+      est: {
+        title: "Higher School of Technology, Fez",
+        desc: "Specialized in Computer Engineering"
+      },
+      ensiasd: {
+        title: "National School of Artificial Intelligence and Data Science (ENSIASD), Taroudante",
+        desc: "Engineering Cycle in IT Security and Digital Trust",
+        status: "(Currently enrolled)"
+      }
     },
     projects: {
       title: "Projects",
@@ -443,7 +481,7 @@ const translations = {
     footer: "All rights reserved."
   },
   fr: {
-    nav: { home: "Accueil", about: "À propos", projects: "Projets", services: "Services", contact: "Contact" },
+    nav: { home: "Accueil", about: "À propos", education: "Éducation", projects: "Projets", services: "Services", contact: "Contact" },
     hero: {
       subtitle: "Étudiant en cybersécurité avec expérience en codage",
       intro: "👋 Bonjour, je m'appelle Badr Eddine BAKENA. Je viens de Tounfite — un petit village de la région de Midelt au Maroc. Actuellement, je suis étudiant en ingénierie de la cybersécurité à Taroudante.\n\nJe suis passionné par le développement full-stack et j'élargis progressivement mes compétences en ingénierie logicielle. J'aime créer des applications web sécurisées et réactives et résoudre des problèmes concrets grâce au code. Que ce soit pour concevoir des interfaces frontend intuitives, développer la logique backend ou explorer les vulnérabilités système, j'apprends toujours et repousse les limites.\n\nConstruisons ensemble quelque chose d'intelligent, de sécurisé et d'impactant.",
@@ -457,6 +495,22 @@ const translations = {
       projects: "Projets & Labs réalisés",
       skills: ["Apprentissage du hacking éthique", "Fondamentaux de la cybersécurité", "Bases de Linux & Réseaux", "Python, JAVA, C, C#", "HTML,CSS, JavaScript, NodeJS", "MySQL, PL-SQL"],
       dev: ["Développement Web", "Génie Logiciel", "Fondamentaux de la cybersécurité"]
+    },
+    education: {
+      title: "Éducation",
+      bac: {
+        title: "Baccalauréat – Sciences Physiques",
+        desc: "Obtenu en 2022"
+      },
+      est: {
+        title: "École Supérieure de Technologie, Fès",
+        desc: "Spécialisation en Génie Informatique"
+      },
+      ensiasd: {
+        title: "École Nationale d'Intelligence Artificielle et Science des Données (ENSIASD), Taroudante",
+        desc: "Cycle d'ingénieur en Sécurité Informatique et Confiance Numérique",
+        status: "(Actuellement inscrit)"
+      }
     },
     projects: {
       title: "Projets",
